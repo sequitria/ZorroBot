@@ -1,0 +1,28 @@
+{
+  "active_conversation": "default",
+  "conversations": {
+    "default": {
+      "messages": [
+        {
+          "role": "assistant",
+          "content": "Hello! I'm ZorroBot, your Zorro Trading Platform assistant. How can I help you today? You can ask me about trading strategies, functions, indicators, or upload a Zorro script for analysis."
+        },
+        {
+          "role": "user",
+          "content": "How to access historical price data?"
+        },
+        {
+          "role": "user",
+          "content": "How to access historical price data?"
+        },
+        {
+          "role": "assistant",
+          "content": "# Accessing Historical Price Data in Zorro\n\nIn Zorro, you can access historical price data through several methods, depending on your needs.\n\n## Using Price Series\n\nThe most common way to access historical price data is through the built-in price series arrays:\n\n```c\n// Access price data\ndouble currentPrice = priceClose[0];  // Current close price\ndouble previousPrice = priceClose[1]; // Previous bar's close price\ndouble olderPrice = priceClose[10];   // Close price from 10 bars ago\n\n// Other price series\ndouble highPrice = priceHigh[0];      // Current high price\ndouble lowPrice = priceLow[0];        // Current low price\ndouble openPrice = priceOpen[0];      // Current open price\n```\n\n## Using the price() Function\n\nYou can also use the `price()` function to access specific price data:\n\n```c\n// Syntax: price(TYPE, SHIFT)\ndouble currentClose = price(CLOSE, 0);  // Same as priceClose[0]\ndouble previousHigh = price(HIGH, 1);   // Same as priceHigh[1]\ndouble openPrice = price(OPEN, 0);      // Same as priceOpen[0]\n```\n\n## Loading Historical Data\n\nTo load historical data for backtesting or analysis:\n\n```c\nfunction run()\n{\n    // Set up the asset to trade\n    asset(\"EUR/USD\");\n    \n    // Load historical data\n    // The lookback period determines how many bars are loaded\n    LookBack = 100;  // Load 100 bars of history\n    \n    // Now you can access up to 100 bars of historical data\n    for(int i = 0; i < 100; i++) {\n        printf(\"Price %i bars ago: %.5f\\n\", i, priceClose[i]);\n    }\n}\n```\n\n## Related Functions and Topics:\n- `asset()` - For selecting the asset to trade\n- `LookBack` - For setting the number of historical bars to load\n- `priceOpen`, `priceHigh`, `priceLow`, `priceClose` - Price series arrays\n- `price()` - Function for accessing price data\n\nI hope this helps you access historical price data in Zorro!"
+        }
+      ],
+      "script_content": null,
+      "script_name": null,
+      "last_sources": []
+    }
+  }
+}

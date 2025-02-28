@@ -1,0 +1,20 @@
+beautifulsoup4==4.13.3
+certifi==2025.1.31
+charset-normalizer==3.4.1
+html2text==2024.2.26
+idna==3.10
+requests==2.32.3
+soupsieve==2.6
+typing_extensions==4.12.2
+urllib3==2.3.0
+
+fastapi==0.105.0
+uvicorn==0.24.0.post1
+pydantic==2.5.2
+python-multipart==0.0.6
+# Keep your existing langchain dependencies
+langchain==0.0.352
+langchain-anthropic==0.1.1
+langchain-voyageai==0.0.6
+langchain-community==0.0.19
+chromadb==0.4.22
